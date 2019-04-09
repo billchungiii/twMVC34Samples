@@ -10,7 +10,11 @@ namespace UsingScopeSample
         static void Main(string[] args)
         {
 
-            Exec();
+            List<string> lines = new List<string>
+            {
+                "AAA","ABBB","CCCCC","FFFF"
+            };
+            Save(lines);
             Console.WriteLine("========= Main Completed!");
 
         }
@@ -33,7 +37,7 @@ namespace UsingScopeSample
 
         static void Save(IEnumerable<string> lines)
         {
-            using ( var file = new System.IO.StreamWriter("file1.txt"))
+            using var file = new System.IO.StreamWriter("file1.txt");
             foreach (string line in lines)
             {              
                 if (!line.Contains("Second"))

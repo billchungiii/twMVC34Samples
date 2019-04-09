@@ -32,7 +32,7 @@ namespace SwitchSample
 
             };
         }
-    }
+    } 
 
     
 }
